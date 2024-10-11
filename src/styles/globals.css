@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  footer {
+    @apply bg-white text-black text-center py-4 shadow-md
+  }
+}
+
+@layer components {
+  .container-body {
+    @apply bg-gray-100 min-h-screen
+  }
+  .text-header {
+    @apply text-2xl font-bold text-black
+  }
+  .container-page {
+    @apply min-h-screen py-20 bg-gray-100
+  }
+  .container-carousel {
+    @apply relative w-full py-10 bg-gray-100
+  }
+  .container-carousel .swiper-pagination-bullet {
+    @apply bg-[#cbd5e1] opacity-75
+  }
+  .container-carousel .swiper-pagination-bullet-active {
+    @apply bg-blue-600 opacity-100
+  }
+  .container-gallery {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4
+  }
+  .text-gallery {
+    @apply text-3xl font-bold text-center text-gray-900 mb-8
+  }
+  .container-card {
+    @apply relative bg-white rounded-lg shadow-lg hover:shadow-2xl p-6 text-center transform hover:scale-105 hover:-translate-y-1 transition-transform duration-300 ease-in-out
+  }
+  .avatar {
+    @apply w-32 h-32 rounded-full mx-auto mb-4
+  }
+  .text-name {
+    @apply text-lg font-bold text-gray-800 mb-2
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
